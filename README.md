@@ -1,123 +1,109 @@
-# 🚀 TaskFlow – Team Task Manager
+# TaskFlow – Team Task Manager
 
-A full-stack web application that allows teams to manage projects, assign tasks, and track progress with role-based access control (Admin & Member).
-
----
-
-## 🌐 Live Demo
-
-* 🔗 Frontend: https://your-frontend.vercel.app
-* 🔗 Backend API: https://your-backend.railway.app
+TaskFlow is a full-stack web application designed to help teams manage projects, assign tasks, and track progress efficiently. It includes role-based access control where Admins manage workflows and Members execute assigned tasks.
 
 ---
 
-## 📌 Features
+## Live Demo
 
-### 🔐 Authentication
+Frontend: https://taskflow-seven-henna.vercel.app/login
+Backend API: https://taskflow-backend-production-f71b.up.railway.app
 
-* User Signup & Login
+---
+
+## Features
+
+1. Authentication
+
+* User signup and login
 * JWT-based authentication
-* Role-based access (Admin / Member)
+* Role-based access (Admin and Member)
 
----
-
-### 📁 Project Management
+2. Project Management
 
 * Create and manage projects
-* Assign multiple members to projects
-* View project details and team members
+* Assign multiple members to a project
+* View project details and assigned team
 
----
-
-### ✅ Task Management
+3. Task Management
 
 * Admin can create and assign tasks
-* Members can view assigned tasks
-* Task status update:
+* Members can view their assigned tasks
+* Task status updates:
 
   * Pending
   * In Progress
   * Completed
 
----
+4. Dashboard
 
-### 📊 Dashboard
+* Displays total tasks
+* Completed tasks
+* Pending tasks (includes In Progress)
+* Overdue tasks
 
-* Total Tasks
-* Completed Tasks
-* Pending Tasks (Pending + In Progress)
-* Overdue Tasks
+5. Notifications (Real-Time)
 
----
+* When Admin assigns a task, the member receives a notification
+* When a member updates task status, Admin receives a notification
+* Built using Socket.io for real-time updates
+* Notification count shown on bell icon
 
-### 🔔 Notifications (Real-Time)
+6. Proof Upload
 
-* Admin assigns task → Member gets notification
-* Member updates status → Admin gets notification
-* Socket.io based real-time updates
-* Notification bell with unread count
+* Members upload screenshots when marking tasks as completed
+* Images are stored on Cloudinary
+* Admin can view submitted proof
 
----
+7. User Management (Admin)
 
-### 📸 Proof Upload (Cloudinary)
-
-* Members upload screenshots when marking task as "Completed"
-* Images stored in Cloudinary
-* Admin can view proof
-
----
-
-### 👤 User Management (Admin)
-
-* Change user roles (Admin / Member)
-* Suspend / Activate users
-* Suspended users cannot login
+* Admin can change user roles
+* Admin can suspend or activate users
+* Suspended users cannot log in
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
-### Frontend
+Frontend
 
 * React.js / Next.js
-* Tailwind CSS / Bootstrap
+* Bootstrap / Tailwind CSS
 
-### Backend
+Backend
 
 * Node.js
 * Express.js
 
-### Database
+Database
 
 * MongoDB Atlas
 
-### Other Tools
+Other Tools
 
-* Socket.io (Real-time)
-* Cloudinary (Image Upload)
-* JWT (Authentication)
+* Socket.io (real-time communication)
+* Cloudinary (image storage)
+* JWT (authentication)
 
 ---
 
-## ⚙️ Installation & Setup
+## Installation and Setup
 
-### 1️⃣ Clone Repository
+1. Clone the repository
 
 ```bash
 git clone https://github.com/your-username/taskflow.git
 cd taskflow
 ```
 
----
-
-### 2️⃣ Backend Setup
+2. Backend setup
 
 ```bash
 cd backend
 npm install
 ```
 
-Create `.env` file:
+Create a `.env` file in the backend folder:
 
 ```
 MONGO_URI=your_mongodb_uri
@@ -133,9 +119,7 @@ Run backend:
 npm run dev
 ```
 
----
-
-### 3️⃣ Frontend Setup
+3. Frontend setup
 
 ```bash
 cd frontend
@@ -145,14 +129,14 @@ npm run dev
 
 ---
 
-## 🌍 Deployment
+## Deployment
 
-* Frontend deployed on **Vercel**
-* Backend deployed on **Railway**
+* Frontend is deployed on Vercel
+* Backend is deployed on Railway
 
 ---
 
-## 📂 Folder Structure
+## Folder Structure
 
 ```
 /frontend
@@ -164,28 +148,22 @@ npm run dev
 
 ---
 
-## 🎥 Demo Video
+## Demo Video
 
-📽️ https://your-demo-video-link.com
+https://your-demo-video-link.com
 
 ---
 
-## 👨‍💻 Author
+## Author
 
 Jitesh Kumar
-B.Tech CSE Student
+B.Tech Computer Science and Engineering
 
 ---
 
-## 📌 Note
+## Note
 
-This project was built as part of a full-stack assignment to demonstrate:
-
-* REST API development
-* Role-based access control
-* Real-time features
-* Deployment skills
+This project was developed as part of a full-stack assignment to demonstrate practical implementation of REST APIs, role-based access control, real-time features, and deployment.
 
 ---
 
-⭐ If you like this project, consider giving it a star!
