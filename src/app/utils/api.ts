@@ -1,6 +1,6 @@
 import axios from 'axios';
+import { BASE_URL } from '../../config/api';
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://taskflow-backend-ghl9.onrender.com';
 
 const api = axios.create({
   baseURL: `${BASE_URL}/api`,
