@@ -26,7 +26,11 @@ export default function Login() {
     setLoading(true);
     try {
       const res = await api.post("/auth/login", { email, password });
-      const { token, role, name, id, profileImage } = res.data;
+
+      // Handle the nested user object as per new backend response format
+      const { token, user } = res.data;
+      const { role, name, id, profileImage } = user;
+
       localStorage.setItem("token", token);
       localStorage.setItem("role", role);
       localStorage.setItem("name", name);
@@ -40,9 +44,11 @@ export default function Login() {
         router.push("/member-dashboard");
       }
     } catch (err: any) {
+      console.error('Login Error:', err);
       setError(err.response?.data?.message || "Invalid email or password");
       setLoading(false);
     }
+
   };
 
   return (
@@ -50,9 +56,9 @@ export default function Login() {
       <div className="auth-overlay"></div>
       <div className="auth-card">
         <h3 className="auth-title">Welcome Back</h3>
-        
+
         {error && <div className="auth-error">{error}</div>}
-        
+
         <form onSubmit={handleLogin}>
           <div className="auth-input-group">
             <label className="auth-label">Email</label>
@@ -66,7 +72,7 @@ export default function Login() {
               required
             />
           </div>
-          
+
           <div className="auth-input-group">
             <label className="auth-label">Password</label>
             <div className="auth-password-wrapper">
@@ -89,11 +95,11 @@ export default function Login() {
               </button>
             </div>
           </div>
-          
+
           <button type="submit" className="auth-btn" disabled={loading}>
             {loading ? (
               <>
-                <Loader2 size={18} className="spinner-border spinner-border-sm me-2 d-inline-block" style={{borderWidth: 0}}/>
+                <Loader2 size={18} className="spinner-border spinner-border-sm me-2 d-inline-block" style={{ borderWidth: 0 }} />
                 Signing in...
               </>
             ) : (
@@ -101,7 +107,7 @@ export default function Login() {
             )}
           </button>
         </form>
-        
+
         <div className="auth-footer">
           Don&apos;t have an account? <Link href="/signup" className="auth-link">Sign Up</Link>
         </div>
