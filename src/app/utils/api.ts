@@ -1,10 +1,12 @@
 import axios from 'axios';
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL || 'https://taskflow-backend-ghl9.onrender.com';
 
 const api = axios.create({
   baseURL: `${BASE_URL}/api`,
+  withCredentials: true,
 });
+
 
 api.interceptors.request.use((config) => {
   if (typeof window !== 'undefined') {

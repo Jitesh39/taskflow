@@ -1,6 +1,6 @@
 import { io } from 'socket.io-client';
 
-const SOCKET_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+const SOCKET_URL = process.env.NEXT_PUBLIC_API_URL || 'https://taskflow-backend-ghl9.onrender.com';
 
 export const socket = io(SOCKET_URL, {
   autoConnect: false,
